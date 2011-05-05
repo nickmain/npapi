@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/7/trunk/samples/mac-basic
+END
+BasicPlugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/7/trunk/samples/mac-basic/BasicPlugin.c
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/samples/mac-basic/Info.plist
+END
+BasicPlugin_Prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/3/trunk/samples/mac-basic/BasicPlugin_Prefix.pch
+END
+BasicPlugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/trunk/samples/mac-basic/BasicPlugin.h
+END

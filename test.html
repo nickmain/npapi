@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Plugin Test Page</title>
+<script>
+  window.onload = function() {
+      var plugin = document.getElementById("test-plugin");
+      document.getElementById("test-result").innerHTML = plugin.foo;
+  }
+  
+  function test2() {
+      var plugin = document.getElementById("test-plugin");
+      document.getElementById("test-result").innerHTML = plugin.bar;  
+  }
+</script>
+</head>
+<body>
+  <center><h1 id="test-result" onclick="test2()">Basic Plugin Example</h1></center>
+<embed id="test-plugin" type="application/test-plugin" hidden="true">
+</body>
+</html>

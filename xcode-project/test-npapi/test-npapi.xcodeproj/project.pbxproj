@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB5E34A2136CF4C700EB597B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB5E34A0136CF4C700EB597B /* InfoPlist.strings */; };
+		AB5E34AA136CF50000EB597B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5E34A9136CF50000EB597B /* Carbon.framework */; };
+		AB5E34AD136CF52A00EB597B /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = AB5E34AB136CF52A00EB597B /* plugin.c */; };
+		AB9680BE136D16A200EF7A29 /* test-npapi.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = AB5E3498136CF4C700EB597B /* test-npapi.bundle */; };
+		AB9680C5136E0B6800EF7A29 /* scripting.c in Sources */ = {isa = PBXBuildFile; fileRef = AB9680C3136E0B6800EF7A29 /* scripting.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB9680BD136D167600EF7A29 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Library/Internet Plug-Ins";
+			dstSubfolderSpec = 0;
+			files = (
+				AB9680BE136D16A200EF7A29 /* test-npapi.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AB5E3498136CF4C700EB597B /* test-npapi.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "test-npapi.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5E349F136CF4C700EB597B /* test-npapi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "test-npapi-Info.plist"; sourceTree = "<group>"; };
+		AB5E34A1136CF4C700EB597B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB5E34A3136CF4C700EB597B /* test-npapi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-npapi-Prefix.pch"; sourceTree = "<group>"; };
+		AB5E34A9136CF50000EB597B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		AB5E34AB136CF52A00EB597B /* plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = plugin.c; path = ../../../src/plugin.c; sourceTree = "<group>"; };
+		AB5E34AC136CF52A00EB597B /* plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plugin.h; path = ../../../src/plugin.h; sourceTree = "<group>"; };
+		AB9680BF136DBBFD00EF7A29 /* npapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = npapi.h; path = "../../../npapi-sdk-read-only/headers/npapi.h"; sourceTree = "<group>"; };
+		AB9680C0136DBBFD00EF7A29 /* npfunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = npfunctions.h; path = "../../../npapi-sdk-read-only/headers/npfunctions.h"; sourceTree = "<group>"; };
+		AB9680C1136DBBFD00EF7A29 /* npruntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = npruntime.h; path = "../../../npapi-sdk-read-only/headers/npruntime.h"; sourceTree = "<group>"; };
+		AB9680C2136DBBFD00EF7A29 /* nptypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nptypes.h; path = "../../../npapi-sdk-read-only/headers/nptypes.h"; sourceTree = "<group>"; };
+		AB9680C3136E0B6800EF7A29 /* scripting.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = scripting.c; path = ../../../src/scripting.c; sourceTree = "<group>"; };
+		AB9680C4136E0B6800EF7A29 /* scripting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scripting.h; path = ../../../src/scripting.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB5E3495136CF4C700EB597B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5E34AA136CF50000EB597B /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB5E348D136CF4C700EB597B = {
+			isa = PBXGroup;
+			children = (
+				AB5E349D136CF4C700EB597B /* test-npapi */,
+				AB5E349A136CF4C700EB597B /* Frameworks */,
+				AB5E3499136CF4C700EB597B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB5E3499136CF4C700EB597B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB5E3498136CF4C700EB597B /* test-npapi.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB5E349A136CF4C700EB597B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB5E34A9136CF50000EB597B /* Carbon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB5E349D136CF4C700EB597B /* test-npapi */ = {
+			isa = PBXGroup;
+			children = (
+				AB9680C3136E0B6800EF7A29 /* scripting.c */,
+				AB9680C4136E0B6800EF7A29 /* scripting.h */,
+				AB5E34AB136CF52A00EB597B /* plugin.c */,
+				AB5E34AC136CF52A00EB597B /* plugin.h */,
+				AB5E349E136CF4C700EB597B /* Supporting Files */,
+			);
+			path = "test-npapi";
+			sourceTree = "<group>";
+		};
+		AB5E349E136CF4C700EB597B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB9680BF136DBBFD00EF7A29 /* npapi.h */,
+				AB9680C0136DBBFD00EF7A29 /* npfunctions.h */,
+				AB9680C1136DBBFD00EF7A29 /* npruntime.h */,
+				AB9680C2136DBBFD00EF7A29 /* nptypes.h */,
+				AB5E349F136CF4C700EB597B /* test-npapi-Info.plist */,
+				AB5E34A0136CF4C700EB597B /* InfoPlist.strings */,
+				AB5E34A3136CF4C700EB597B /* test-npapi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB5E3497136CF4C700EB597B /* test-npapi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB5E34A6136CF4C700EB597B /* Build configuration list for PBXNativeTarget "test-npapi" */;
+			buildPhases = (
+				AB5E3494136CF4C700EB597B /* Sources */,
+				AB5E3495136CF4C700EB597B /* Frameworks */,
+				AB5E3496136CF4C700EB597B /* Resources */,
+				AB9680BD136D167600EF7A29 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "test-npapi";
+			productName = "test-npapi";
+			productReference = AB5E3498136CF4C700EB597B /* test-npapi.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB5E348F136CF4C700EB597B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = AB5E3492136CF4C700EB597B /* Build configuration list for PBXProject "test-npapi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB5E348D136CF4C700EB597B;
+			productRefGroup = AB5E3499136CF4C700EB597B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB5E3497136CF4C700EB597B /* test-npapi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB5E3496136CF4C700EB597B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5E34A2136CF4C700EB597B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB5E3494136CF4C700EB597B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5E34AD136CF52A00EB597B /* plugin.c in Sources */,
+				AB9680C5136E0B6800EF7A29 /* scripting.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB5E34A0136CF4C700EB597B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB5E34A1136CF4C700EB597B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB5E34A4136CF4C700EB597B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "XP_MACOSX=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../../npapi-sdk-read-only/headers";
+				INSTALL_PATH = "/Library/Internet Plug-Ins";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AB5E34A5136CF4C700EB597B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "XP_MACOSX=1";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../../npapi-sdk-read-only/headers";
+				INSTALL_PATH = "/Library/Internet Plug-Ins";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AB5E34A7136CF4C700EB597B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test-npapi/test-npapi-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "XP_MACOSX=1";
+				INFOPLIST_FILE = "test-npapi/test-npapi-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		AB5E34A8136CF4C700EB597B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test-npapi/test-npapi-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "XP_MACOSX=1";
+				INFOPLIST_FILE = "test-npapi/test-npapi-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB5E3492136CF4C700EB597B /* Build configuration list for PBXProject "test-npapi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB5E34A4136CF4C700EB597B /* Debug */,
+				AB5E34A5136CF4C700EB597B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB5E34A6136CF4C700EB597B /* Build configuration list for PBXNativeTarget "test-npapi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB5E34A7136CF4C700EB597B /* Debug */,
+				AB5E34A8136CF4C700EB597B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB5E348F136CF4C700EB597B /* Project object */;
+}

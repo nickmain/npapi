@@ -9,10 +9,19 @@
 #define PLUGIN_DESCRIPTION "Test Plug-in"
 #define PLUGIN_VERSION     "1.0.0.3"
 
-static NPNetscapeFuncs* pNPNetscapeFuncs = NULL;
+NPNetscapeFuncs* pNPNetscapeFuncs = NULL;
 
 static ScriptClass pluginClass;
 static PropertyDescriptor props[2];
+
+
+static void returnString( const NPUTF8* s, NPVariant* result ) {
+    char* buf = (char*) NPN_MemAlloc(strlen(s) + 1);
+    strcpy(buf, s);
+
+    STRINGZ_TO_NPVARIANT(buf, *result);
+}
+
 
 static bool GetFoo(NPObject *npobj, NPIdentifier name, NPVariant *result) {
     returnString( "Hello from Foo !", result );
@@ -24,8 +33,6 @@ static bool GetBar(NPObject *npobj, NPIdentifier name, NPVariant *result) {
 	NPObject* pWindow;
 	NPP instance = NPP_from_NPObject(npobj);
 	if( NPN_GetValue(instance,NPNVWindowNPObject,&pWindow) == NPERR_NO_ERROR ) {
-		returnString( "SUCCESS", result );
-
 		NPVariant docResult;
 		NPIdentifier idDocument = NPN_GetStringIdentifier("document");
 		NPIdentifier idTitle    = NPN_GetStringIdentifier("title");
@@ -59,6 +66,9 @@ NPError NP_Initialize(NPNetscapeFuncs* bFuncs) {
 NPError NP_Initialize(NPNetscapeFuncs* bFuncs, NPPluginFuncs* pFuncs) {
 #endif
 	
+//	OPEN_DEBUG
+//	DEBUG("NP_Initialize")
+
     pNPNetscapeFuncs = bFuncs;
     
     initializeClass( &pluginClass );
@@ -73,9 +83,6 @@ NPError NP_Initialize(NPNetscapeFuncs* bFuncs, NPPluginFuncs* pFuncs) {
     props[1].name = NPN_GetStringIdentifier("bar");
     props[1].getter = GetBar;
     
-    //TODO dealloc for class
-    
-    
     
 #ifdef XP_MACOSX
 	return NPERR_NO_ERROR;
@@ -85,7 +92,7 @@ NPError NP_Initialize(NPNetscapeFuncs* bFuncs, NPPluginFuncs* pFuncs) {
 }    
     
 NPError NP_GetEntryPoints(NPPluginFuncs *pFuncs) {
-    
+
 	pFuncs->newp = NPP_New;
 	pFuncs->destroy = NPP_Destroy;
 	pFuncs->setwindow = NPP_SetWindow;
@@ -130,11 +137,14 @@ NPError NP_GetValue(void* future, NPPVariable aVariable, void* aValue) {
 }
 
 NPError NP_Shutdown() {
+	CLOSE_DEBUG
 	return NPERR_NO_ERROR;
 }
 
 NPError NPP_New(NPMIMEType pluginType, NPP instance, uint16_t mode,
 		int16_t argc, char* argn[], char* argv[], NPSavedData* saved) {
+
+	DEBUG("NPP_New")
 
 	PluginInstance* instanceData = (PluginInstance*) malloc(sizeof(PluginInstance));
 	if (!instanceData)
@@ -148,16 +158,21 @@ NPError NPP_New(NPMIMEType pluginType, NPP instance, uint16_t mode,
 }
 
 NPError NPP_Destroy(NPP instance, NPSavedData** save) {
+
+	DEBUG("NPP_Destroy")
+
 	PluginInstance* instanceData = (PluginInstance*) (instance->pdata);
 
 	free(instanceData);
+
 	return NPERR_NO_ERROR;
 }
 
 NPError NPP_GetValue(NPP instance, NPPVariable variable, void *value) {
 	switch (variable) {
 	case NPPVpluginScriptableNPObject: {
-		*((NPObject**) value) = NPN_CreateObject(instance, &pluginClass.npClass);
+		NPObject* pObj = NPN_CreateObject(instance, &pluginClass.npClass);
+		*((NPObject**) value) = pObj;
 		break;
 	}
 

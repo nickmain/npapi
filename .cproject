@@ -44,9 +44,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.debug.1998666626" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.debug">
 								<option defaultValue="true" id="gnu.c.link.so.debug.option.shared.1581031382" name="Shared (-shared)" superClass="gnu.c.link.so.debug.option.shared" valueType="boolean"/>
-								<option id="gnu.c.link.option.libs.1852857181" superClass="gnu.c.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="/usr/local/lib/Yap/libYap.a"/>
-								</option>
+								<option id="gnu.c.link.option.libs.1852857181" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1004389539" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

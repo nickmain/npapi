@@ -64,7 +64,4 @@ bool NPConstruct(NPObject *npobj, const NPVariant *args, uint32_t argCount, NPVa
 
 void initializeClass( ScriptClass* pClass );
 
-// copy a string to the result variant
-void returnString( const NPUTF8* s, NPVariant* result );
-
 #endif // scripting_h_

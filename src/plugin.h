@@ -4,6 +4,8 @@
 #include "npapi.h"
 #include "npfunctions.h"
 
+#include "bugger.h"
+
 #ifdef WIN32
     #define NP_EXPORT
 #else
@@ -37,6 +39,8 @@ int16_t NPP_HandleEvent(NPP instance, void* event);
 void    NPP_URLNotify(NPP instance, const char* URL, NPReason reason, void* notifyData);
 NPError NPP_GetValue(NPP instance, NPPVariable variable, void *value);
 NPError NPP_SetValue(NPP instance, NPNVariable variable, void *value);
+
+NPNetscapeFuncs *pNPNetscapeFuncs;
 
 #define NPN_GetURL pNPNetscapeFuncs->geturl
 #define NPN_PostURL pNPNetscapeFuncs->posturl
@@ -85,13 +89,13 @@ NPError NPP_SetValue(NPP instance, NPNVariable variable, void *value);
 #define NPN_Construct pNPNetscapeFuncs->construct
 #define NPN_GetValueForURL pNPNetscapeFuncs->getvalueforurl
 #define NPN_SetValueForUR pNPNetscapeFuncs->setvalueforurl
-#define NPN_GetAuthenticationInfoPtr getauthenticationinfo
-#define NPN_ScheduleTimerPtr scheduletimer
-#define NPN_UnscheduleTimerPtr unscheduletimer
-#define NPN_PopUpContextMenuPtr popupcontextmenu
-#define NPN_ConvertPointPtr convertpoint
-#define NPN_HandleEventPtr handleevent
-#define NPN_UnfocusInstancePtr unfocusinstance
-#define NPN_URLRedirectResponsePtr urlredirectresponse
+#define NPN_GetAuthenticationInfoPtr pNPNetscapeFuncs->getauthenticationinfo
+#define NPN_ScheduleTimerPtr pNPNetscapeFuncs->scheduletimer
+#define NPN_UnscheduleTimerPtr pNPNetscapeFuncs->unscheduletimer
+#define NPN_PopUpContextMenuPtr pNPNetscapeFuncs->popupcontextmenu
+#define NPN_ConvertPointPtr pNPNetscapeFuncs->convertpoint
+#define NPN_HandleEventPtr pNPNetscapeFuncs->handleevent
+#define NPN_UnfocusInstancePtr pNPNetscapeFuncs->unfocusinstance
+#define NPN_URLRedirectResponsePtr pNPNetscapeFuncs->urlredirectresponse
 
 #endif // plugin_h_

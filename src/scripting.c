@@ -12,24 +12,23 @@
 #include <string.h>
 #include <stdio.h>
 
-void returnString( const NPUTF8* s, NPVariant* result ) {
-    char* buf = (char*) NPN_MemAlloc(strlen(s) + 1);
-    strcpy(buf, s);
-
-    STRINGZ_TO_NPVARIANT(buf, *result);
-}
-
 
 NPObject* NPAllocate(NPP npp, NPClass *aClass) {
-    
     ScriptClass* scriptClass = (ScriptClass*) aClass;
     
-    PluginScriptObject* pObj = malloc(sizeof(scriptClass->instanceSize));
+	int instanceSize = scriptClass->instanceSize;
+
+	PluginScriptObject* pObj = malloc(instanceSize);
+    memset( pObj, 0, instanceSize );
+    pObj->npObject._class = aClass;
     pObj->pluginInstance = npp->pdata;
+
+    DEBUGI( "allocated", pObj )
     return (NPObject*) pObj;
 }
 
 void NPDeallocate(NPObject *npobj) {
+	DEBUGI("NPDeallocate", npobj)
     free(npobj);
 }
 
@@ -39,7 +38,7 @@ void NPInvalidate(NPObject *npobj) {
 
 bool NPHasMethod(NPObject *npobj, NPIdentifier name) {
     ScriptClass* pClass = (ScriptClass*) npobj->_class;
-    
+
     int methCount = pClass->methodCount;
     MethodDescriptor* meths = pClass->methods;
     for( int i = 0; i < methCount; i++ ) {
@@ -99,6 +98,7 @@ bool NPEnumerate(NPObject *npobj, NPIdentifier **value, uint32_t *count) {
 
 bool NPConstruct(NPObject *npobj, const NPVariant *args, uint32_t argCount,
                  NPVariant *result) {
+	DEBUG( "NPConstruct" )
 	return false;
 }
 
